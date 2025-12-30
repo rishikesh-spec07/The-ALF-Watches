@@ -1,0 +1,384 @@
+<style>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: rgb(118, 95, 95);
+}
+
+header {
+    background: #000000;
+    color: white;
+    padding: 1px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.logo img {
+    height: 80px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #d4af37;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 5px 0;
+}
+
+.first {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('img1.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 200px 100px;
+}
+
+.first h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.first p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.book {
+    display: inline-block;
+    background: #d4af37;
+    color: #333;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+    border: none;
+}
+
+.btn:hover {
+    background: #f0c555;
+}
+
+.look h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.blog {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    padding: 16px;
+    background: #fff;
+    border-radius: 20px;
+}
+
+.blog-pic img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 70px;
+}
+
+.blog-text {
+    display: block;
+    background: transparent;
+    color: #222;
+    padding: 14px 18px;
+    border-radius: 6px;
+    font-weight: 400;
+    transition: background 0.3s;
+    border: none;
+    flex: 1;
+    line-height: 1.45;
+}
+
+.journal {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    font-family: Jost;
+    font-size: 1.5rem;
+    font-style: normal;
+}
+
+.journal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 20px;
+    align-items: stretch;
+}
+
+.blog {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    background: #fff;
+    border-radius: 50px;
+    box-shadow: 0 8px 20px rgba(19 185 206);
+    height: 100%;
+}
+
+.watches {
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .watches {
+        color: #000;
+        font-family: Jost;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.gender-row {
+    display: inline-flex;
+    gap: 48px;
+    margin: 8px;
+    padding: 8px;
+    align-items: center
+}
+
+.gender-item h2 {
+    margin: 0;
+    letter-spacing: 1px;
+    font-size: 28px
+}
+
+@media (max-width:600px) {
+    .gender-row {
+        gap: 18px
+    }
+
+    .gender-item h2 {
+        font-size: 22px
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    margin: 0 auto 18px;
+}
+
+.content {
+    color: #e8ebeb;
+    line-height: 1.6;
+    text-align: left;
+    margin-top: 18px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    align-items: start;
+    margin: 20px 0;
+}
+
+.product-card {
+    background-color: #dad7d7;
+    border-radius: 8px;
+    box-shadow: 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 0;
+    text-align: center;
+    padding-bottom: 15px;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+    will-change: transform, box-shadow;
+}
+
+.product-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.pic-image {
+    height: 300px;
+    background-color: #dad9d9;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    overflow: hidden;
+}
+
+.pic-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 300ms ease;
+}
+
+.product-card:hover .pic-image img {
+    transform: scale(1.06);
+}
+
+@media (max-width: 600px) {
+    .pic-image {
+        height: 180px;
+    }
+
+    .product-card {
+        min-width: 0;
+    }
+}
+
+
+.product-info {
+    padding: 10px;
+}
+
+.brand {
+    font-weight: 700;
+    margin: 5px 0;
+}
+
+.model {
+    color: #666;
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+
+.price {
+    font-weight: 700;
+    color: #000;
+    margin: 10px 0 0;
+}
+
+.brand-info {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    font-family: Jost;
+    font-size: 1.2rem;
+    font-style: normal;
+    color: #b2b0b0;
+    line-height: 1.6;
+}
+
+.brand-info h1 {
+    text-align: center;
+}
+
+.explore-button {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: Jost;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28.9px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px 35px;
+    background: #00b0ad;
+    color: #fff;
+}
+.collection-title {
+   font-family: 'Jost';
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 40.46px;
+    text-align: LEFT;
+    text-transform: uppercase;
+    color: #e6d8d8;
+}
+.paragraphs h2 {
+    font-family: 'Jost';
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 40.46px;
+    text-align: LEFT;
+    text-transform: uppercase;
+    color: #08bab5;
+    margin-bottom: 12px;
+}
+.paragraphs p {
+    font-family: 'Jost';
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28.9px;
+    text-align: LEFT;
+    color: #b2b0b0;
+    margin-bottom: 16px;
+}
+.content h2 {
+    font-family: 'Jost';
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 40.46px;
+    text-align: LEFT;
+    text-transform: uppercase;
+    color: #08bab5;
+    margin-bottom: 12px;
+}
+.content p {
+    font-family: 'Jost';
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28.9px;
+    text-align: LEFT;
+    color: #b2b0b0;
+    margin-bottom: 16px;
+}
+
+
+
+
+
+
+footer{
+        text-align: center;
+        color: aliceblue;
+}
